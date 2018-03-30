@@ -30,7 +30,6 @@ coverage.xml
 *.pot
 
 # Django stuff:
-staticfiles/
 
 # pyenv
 .python-version
