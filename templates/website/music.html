@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h4>Albums</h4>
+    <div class="row">
+         {% for album in music %}
+            <div class="four columns">
+                {% load static %}
+                <a href="{% url 'website:album' album.id %}"><img src="{{ album.cover_art.url }}" alt="{{ album.name }}" height="320px"></a> 
+                <p>{{ album.name }} | <i><small>{{ album.release_date }}</small></i></p>
+                
+                <br>
+                <a class="button u-full-width" href="{% url 'website:album' album.id %}">View</a>
+            </div>
+         {% endfor %}
+    </div>
+    
+{% endblock %}

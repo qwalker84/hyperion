@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="four columns">
+            <img src="{{ album.cover_art.url }}" alt="Album Art" height="300px">
+        </div>
+        <div class="eight columns">
+            <table class="u-full-width">
+                <thead>
+                    <tr>    
+                        <th>Number</th>
+                        <th>Song Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for song in album.song_set.all %}
+                    <tr>
+                        <td>{{ song.number }}</td>
+                        <td>{{ song.name }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+        
+{% endblock  %}
